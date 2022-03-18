@@ -32,38 +32,38 @@ def load_shaders():
     with open('glsl/fragmentRGB2YIQ.glsl', 'r') as f:
         fragment = f.read()
 
-    # global fragment1
-    # with open('glsl/fragment.glsl', 'r') as f:
-    #     fragment1 = f.read()
+    global fragment1
+    with open('glsl/fragment.glsl', 'r') as f:
+        fragment1 = f.read()
 
     vertex = ''.join(vertex)
     fragment = ''.join(fragment)
-    # fragment1 = ''.join(fragment1)
+    fragment1 = ''.join(fragment1)
 
 
 def init():
     # createBuffer
-    # glBindFramebuffer(GL_FRAMEBUFFER, vertexVBO)
+    glBindFramebuffer(GL_FRAMEBUFFER, vertexVBO)
 
-    # texture = glGenTextures(1)
-    # glBindTexture(GL_TEXTURE_2D, texture)
-    # glTexImage2D(
-    #     GL_TEXTURE_2D,
-    #     0,
-    #     GL_RGB,
-    #     Width,
-    #     Height,
-    #     0,
-    #     GL_RGBA,
-    #     GL_UNSIGNED_BYTE,
-    #     None
-    # )
-    # glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST )
-    # glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST )
-    # glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE )
-    # glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE )
+    texture = glGenTextures(1)
+    glBindTexture(GL_TEXTURE_2D, texture)
+    glTexImage2D(
+        GL_TEXTURE_2D,
+        0,
+        GL_RGB,
+        Width,
+        Height,
+        0,
+        GL_RGBA,
+        GL_UNSIGNED_BYTE,
+        None
+    )
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST )
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST )
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE )
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE )
 
-    # glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0)
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0)
 
     # endBuffer
     glClearColor(0.7, 1.0, 0.7, 1)
